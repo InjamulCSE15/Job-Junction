@@ -9,4 +9,7 @@ BASE
     html,body {
         font-family: "Fira Sans", sans-serif;        
     }
+    .menu li a.active {
+        color: #FFF !important;
+    }
 }
