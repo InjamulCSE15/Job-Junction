@@ -4,6 +4,7 @@ import { FeaturedJobCard } from "../FeaturedJobCard/FeaturedJobCard";
 
 export const FeaturedJobs = () => {
     const [featuredJobs, setFeaturedJobs] = useState([]);
+    const [showAllJobs, setShowAllJobs] = useState(4);
     useEffect(() => {
         axios.get('featuredJobs.json')
             .then((res) => setFeaturedJobs(res.data))
@@ -15,8 +16,14 @@ export const FeaturedJobs = () => {
             <p className="text-center text-gray-500 py-4">Discover Our Featured Jobs: Explore Top Opportunities in Tech, Development, and Engineering Today!</p>
             <div className="grid grid-cols-1 gap-4 lg:grid-cols-2">
                 {
-                    featuredJobs.map(featuredJob => <FeaturedJobCard key={featuredJob.id} featuredJob={featuredJob}></FeaturedJobCard>)
+                    featuredJobs.slice(0, showAllJobs).map(featuredJob => <FeaturedJobCard key={featuredJob.id} featuredJob={featuredJob}></FeaturedJobCard>)
                 }
+            </div>
+            <div className={showAllJobs === featuredJobs.length && 'hidden'} >
+                <div className="text-center">
+                <button onClick={()=> setShowAllJobs(featuredJobs.length)}
+                className="btn btn-active text-dark capitalize mt-4">Show all jobs</button>
+                </div>
             </div>
         </div>
     )
