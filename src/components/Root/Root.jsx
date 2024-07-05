@@ -4,9 +4,11 @@ import { Header } from "../Header/Header"
 
 export const Root = () => {
   return (
-    <div className="container mx-auto">
-      <Header/>
-      <Outlet/>
+    <div>
+      <div className="container mx-auto">
+        <Header/>
+        <Outlet/>
+      </div>
       <Footer/>
     </div>
   )

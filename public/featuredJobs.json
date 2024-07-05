@@ -7,7 +7,7 @@
         "jobType": "Full-time",
         "salary": "$80 - $100k",
         "position": "Mid-level",
-        "remote": "yes",
+        "remote": true,
         "location": "San Francisco, CA",
         "job_short_details": "Looking for a skilled frontend developer with expertise in React.js.",
         "job_description": [
@@ -48,7 +48,7 @@
         "jobType": "Part-time",
         "salary": "$60 - $900k",
         "position": "Mid-level",
-        "remote": "no",
+        "remote": false,
         "location": "Austin, TX",
         "job_short_details": "Seeking a backend developer experienced with Node.js and MongoDB.",
         "job_description": [
@@ -89,7 +89,7 @@
         "jobType": "Contract",
         "salary": "$70 - $110k",
         "position": "Senior-level",
-        "remote": "yes",
+        "remote": true,
         "location": "New York, NY",
         "job_short_details": "Full stack developer with expertise in JavaScript, Node.js, and React.",
         "job_description": [
@@ -130,7 +130,7 @@
         "jobType": "Full-time",
         "salary": "$75 - $95k",
         "position": "Junior-level",
-        "remote": "no",
+        "remote": false,
         "location": "Seattle, WA",
         "job_short_details": "Mobile developer needed with experience in iOS and Android development.",
         "job_description": [
@@ -171,7 +171,7 @@
         "jobType": "Full-time",
         "salary": "$90 - $120k",
         "position": "Senior-level",
-        "remote": "yes",
+        "remote": true,
         "location": "Remote",
         "job_short_details": "DevOps engineer with experience in AWS and CI/CD pipelines.",
         "job_description": [
@@ -206,13 +206,13 @@
     },
     {
         "id": "6",
-        "job_title": "Software Engineer",
-        "company": "CodeCrafters",
+        "job_title": "UI/UX Designer",
+        "company": "Code Crafters",
         "logo": "../public/assets/imgs/featuredJobs/CodeCrafters.png",
         "jobType": "Full-time",
         "salary": "$85 - $105k",
         "position": "Mid-level",
-        "remote": "no",
+        "remote": false,
         "location": "Los Angeles, CA",
         "job_short_details": "UI/UX designer with a strong portfolio in web and mobile design.",
         "job_description": [

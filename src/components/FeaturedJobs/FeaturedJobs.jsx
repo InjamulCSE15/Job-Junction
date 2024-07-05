@@ -5,7 +5,7 @@ import { FeaturedJobCard } from "../FeaturedJobCard/FeaturedJobCard";
 export const FeaturedJobs = () => {
     const [featuredJobs, setFeaturedJobs] = useState([]);
     useEffect(() => {
-        axios.get('../../../public/featuredJobs.json')
+        axios.get('featuredJobs.json')
             .then((res) => setFeaturedJobs(res.data))
             .catch((error) => console.error(error))
     }, [])

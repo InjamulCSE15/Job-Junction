@@ -6,7 +6,7 @@ export const JobCategoryList = () => {
 
   const [jobCategories, setJobCategories] = useState([]);
   useEffect(()=>{
-    axios.get('../../../public/jobCategories.json')
+    axios.get('jobCategories.json')
     .then((response) => { setJobCategories(response.data); })
     .catch((error) => { console.error('There was an error fetching the data!', error); });
   },[])
