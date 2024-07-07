@@ -5,7 +5,7 @@ export const JobDetails = () => {
     const jobs = useLoaderData();
     const { id } = useParams();
     const job = jobs.find(job => job.id == id)
-    const { job_title, company, logo, jobType, salary, position, remote, location, job_description, job_responsibility, contact_information } = job;
+    const { job_title, company, logo, jobType, salary, position, remote, location, job_description, job_responsibility, skills, qualifications, contact_information } = job;
     return (
         <section className="">
             <div className="mx-auto max-w-screen-xl px-4 py-8 md:py-12 lg:flex  lg:items-center">
@@ -79,35 +79,38 @@ export const JobDetails = () => {
                                         </li>)
                                 }
                             </ul>
-                            <h1 className='text-xl font-semibold text-gray-700'>Desired Skills</h1>
-                            <ul>
-
-                            </ul>
+                            <div className="grid grid-cols-1 md:grid-cols-2">
+                                <div>
+                                    <h1 className='text-xl font-semibold text-gray-700'>Desired Skills</h1>
+                                    <div className="flex flex-wrap gap-2 my-4">
+                                        {skills.map((skill, i) => (<div key={i} className="badge badge-ghost font-medium text-xs">{skill}</div>))}
+                                    </div>
+                                </div>
+                                <div>
+                                    <h1 className='text-xl font-semibold text-gray-700'>Qualification</h1>
+                                    <ul className="my-4 space-y-3">
+                                        <li className="flex items-start lg:col-span-1">
+                                                    <div className="flex-shrink-0">
+                                                        <svg className="w-5 h-5 text-indigo-600" fill="currentColor" viewBox="0 0 20 20">
+                                                            <path fillRule="evenodd"
+                                                                d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                                                clipRule="evenodd"></path>
+                                                        </svg>
+                                                    </div>
+                                                    <p className="ml-3 leading-5 text-gray-600">
+                                                        {qualifications}
+                                                    </p>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div className="lg:w-2/6 md:w-1/2 bg-gray-100 rounded-lg p-8 flex flex-col md:ml-auto w-full mt-10 md:mt-0">
-                        <h2 className="text-gray-900 text-lg font-medium title-font mb-5">Sign Up</h2>
-                        <div className="relative mb-4">
-                            <label htmlFor="full-name" className="leading-7 text-sm text-gray-600">Full Name</label>
-                            <input
-                                type="text"
-                                id="full-name"
-                                name="full-name"
-                                className="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
-                            />
-                        </div>
-                        <div className="relative mb-4">
-                            <label htmlFor="email" className="leading-7 text-sm text-gray-600">Email</label>
-                            <input
-                                type="email"
-                                id="email"
-                                name="email"
-                                className="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
-                            />
-                        </div>
-                        <button className="text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg">
-                            Button
-                        </button>
+                        <h2 className="text-gray-900 text-xl font-medium title-font mb-5">Job Details</h2>
+                        {
+                            
+                        }
                         <p className="text-xs text-gray-500 mt-3">Literally you probably haven't heard of them jean shorts.</p>
                     </div>
                 </div>
