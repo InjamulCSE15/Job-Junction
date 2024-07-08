@@ -79,39 +79,26 @@ export const JobDetails = () => {
                                         </li>)
                                 }
                             </ul>
-                            <div className="grid grid-cols-1 md:grid-cols-2">
-                                <div>
-                                    <h1 className='text-xl font-semibold text-gray-700'>Desired Skills</h1>
-                                    <div className="flex flex-wrap gap-2 my-4">
-                                        {skills.map((skill, i) => (<div key={i} className="badge badge-ghost font-medium text-xs">{skill}</div>))}
-                                    </div>
-                                </div>
-                                <div>
-                                    <h1 className='text-xl font-semibold text-gray-700'>Qualification</h1>
-                                    <ul className="my-4 space-y-3">
-                                        <li className="flex items-start lg:col-span-1">
-                                                    <div className="flex-shrink-0">
-                                                        <svg className="w-5 h-5 text-indigo-600" fill="currentColor" viewBox="0 0 20 20">
-                                                            <path fillRule="evenodd"
-                                                                d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                                                                clipRule="evenodd"></path>
-                                                        </svg>
-                                                    </div>
-                                                    <p className="ml-3 leading-5 text-gray-600">
-                                                        {qualifications}
-                                                    </p>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
                         </div>
                     </div>
                     <div className="lg:w-2/6 md:w-1/2 bg-gray-100 rounded-lg p-8 flex flex-col md:ml-auto w-full mt-10 md:mt-0">
-                        <h2 className="text-gray-900 text-xl font-medium title-font mb-5">Job Details</h2>
-                        {
-                            
-                        }
-                        <p className="text-xs text-gray-500 mt-3">Literally you probably haven't heard of them jean shorts.</p>
+                        <h1 className='text-xl font-semibold text-gray-700'>Workplace and Experience</h1>
+                        <ul className="list-disc flex flex-wrap gap-2 justify-between px-6 py-4 text-gray-700">
+                            <li>{remote ? 'Remote' : 'On-site'}</li>
+                            <li>{jobType}</li>
+                            <li>{position}</li>
+                        </ul>
+                        <h1 className='text-xl font-semibold text-gray-700'>Desired Skills</h1>
+                        <div className="flex flex-wrap gap-2 my-4">
+                            {skills.map((skill, i) => (<div key={i} className="badge badge-white font-medium text-xs">{skill}</div>))}
+                        </div>
+                        <h1 className='text-xl font-semibold text-gray-700'>Qualification</h1>
+                        <ul className="my-4 space-y-3 list-disc px-6 text-gray-700">
+                            <li>{qualifications}</li>
+                        </ul>
+                        <button class="relative flex h-[50px] w-full items-center justify-center overflow-hidden bg-gray-800 text-white shadow-2xl transition-all before:absolute before:h-0 before:w-0 before:bg-cyan-600 before:duration-500 before:ease-out hover:shadow-cyan-600 hover:before:h-56 hover:before:w-full">
+                            <span class="relative z-10">Apply Now</span>
+                        </button>
                     </div>
                 </div>
             </div>
