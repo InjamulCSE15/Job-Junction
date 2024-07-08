@@ -14,6 +14,7 @@ import { Home } from './components/Home/Home';
 import { AppliedJobs } from './components/AppliedJobs/AppliedJobs';
 import { Error404 } from './components/Error404/Error404';
 import { JobDetails } from './components/JobDetails/JobDetails';
+import { Toaster } from 'react-hot-toast';
 const router = createBrowserRouter([
   {
     path: "/",
@@ -40,5 +41,6 @@ const router = createBrowserRouter([
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <RouterProvider router={router} />
+    <Toaster />
   </React.StrictMode>
 );

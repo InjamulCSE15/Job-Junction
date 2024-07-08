@@ -1,4 +1,5 @@
 import React from 'react'
+import toast from 'react-hot-toast';
 import { useLoaderData, useParams } from 'react-router-dom'
 
 export const JobDetails = () => {
@@ -6,6 +7,11 @@ export const JobDetails = () => {
     const { id } = useParams();
     const job = jobs.find(job => job.id == id)
     const { job_title, company, logo, jobType, salary, position, remote, location, job_description, job_responsibility, skills, qualifications, contact_information } = job;
+
+    const applyJobBtn = () => {
+        toast.success('Job applied successfully!');
+    }
+
     return (
         <section className="">
             <div className="mx-auto max-w-screen-xl px-4 py-8 md:py-12 lg:flex  lg:items-center">
@@ -81,7 +87,7 @@ export const JobDetails = () => {
                             </ul>
                         </div>
                     </div>
-                    <div className="lg:w-2/6 md:w-1/2 bg-gray-100 rounded-lg p-8 flex flex-col md:ml-auto w-full mt-10 md:mt-0">
+                    <div className="lg:w-2/6 md:w-1/2 bg-gray-100 rounded-lg p-8 flex flex-col md:ml-auto h-full w-full mt-10 md:mt-0">
                         <h1 className='text-xl font-semibold text-gray-700'>Workplace and Experience</h1>
                         <ul className="list-disc flex flex-wrap gap-2 justify-between px-6 py-4 text-gray-700">
                             <li>{remote ? 'Remote' : 'On-site'}</li>
@@ -96,7 +102,17 @@ export const JobDetails = () => {
                         <ul className="my-4 space-y-3 list-disc px-6 text-gray-700">
                             <li>{qualifications}</li>
                         </ul>
-                        <button class="relative flex h-[50px] w-full items-center justify-center overflow-hidden bg-gray-800 text-white shadow-2xl transition-all before:absolute before:h-0 before:w-0 before:bg-cyan-600 before:duration-500 before:ease-out hover:shadow-cyan-600 hover:before:h-56 hover:before:w-full">
+                        <h1 className='text-xl font-semibold text-gray-700'>Qualification</h1>
+                        <ul className="my-4 space-y-3 list-disc px-6 text-gray-700">
+                            <li>{qualifications}</li>
+                        </ul>
+                        <h1 className='text-xl font-semibold text-gray-700'>Contact Information</h1>
+                        <ul className="my-4 space-y-3 list-disc px-6 text-gray-700">
+                            <li>Phone: {contact_information.phone}</li>
+                            <li>Email: {contact_information.email}</li>
+                            <li>Address: {contact_information.address}</li>
+                        </ul>
+                        <button onClick={applyJobBtn} class="relative rounded-lg flex h-[50px] w-full items-center justify-center overflow-hidden bg-gray-800 text-white shadow-2xl transition-all before:absolute before:h-0 before:w-0 before:bg-cyan-600 before:duration-500 before:ease-out hover:shadow-cyan-600 hover:before:h-56 hover:before:w-full">
                             <span class="relative z-10">Apply Now</span>
                         </button>
                     </div>
