@@ -1,6 +1,7 @@
 import React from 'react'
 import toast from 'react-hot-toast';
 import { useLoaderData, useParams } from 'react-router-dom'
+import { storeAppliedJobId } from '../LocalStore/localStore';
 
 export const JobDetails = () => {
     const jobs = useLoaderData();
@@ -9,6 +10,7 @@ export const JobDetails = () => {
     const { job_title, company, logo, jobType, salary, position, remote, location, job_description, job_responsibility, skills, qualifications, contact_information } = job;
 
     const applyJobBtn = () => {
+        storeAppliedJobId(id);
         toast.success('Job applied successfully!');
     }
 
@@ -71,7 +73,7 @@ export const JobDetails = () => {
                             <ul className="my-4 space-y-3">
                                 {
                                     job_responsibility.map((responsibility, i) =>
-                                        <li key={i} className="flex items-start lg:col-span-1">
+                                        <li key={i} className="flex items-start lg:col-span-1 text-sm">
                                             <div className="flex-shrink-0">
                                                 <svg className="w-5 h-5 text-indigo-600" fill="currentColor" viewBox="0 0 20 20">
                                                     <path fillRule="evenodd"
@@ -106,14 +108,18 @@ export const JobDetails = () => {
                         <ul className="my-4 space-y-3 list-disc px-6 text-gray-700">
                             <li>{qualifications}</li>
                         </ul>
+                        <h1 className='text-xl font-semibold text-gray-700'>Salary</h1>
+                        <ul className="my-4 space-y-3 px-2 text-gray-700">
+                            <li>{salary}</li>
+                        </ul>
                         <h1 className='text-xl font-semibold text-gray-700'>Contact Information</h1>
                         <ul className="my-4 space-y-3 list-disc px-6 text-gray-700">
                             <li>Phone: {contact_information.phone}</li>
                             <li>Email: {contact_information.email}</li>
                             <li>Address: {contact_information.address}</li>
                         </ul>
-                        <button onClick={applyJobBtn} class="relative rounded-lg flex h-[50px] w-full items-center justify-center overflow-hidden bg-gray-800 text-white shadow-2xl transition-all before:absolute before:h-0 before:w-0 before:bg-cyan-600 before:duration-500 before:ease-out hover:shadow-cyan-600 hover:before:h-56 hover:before:w-full">
-                            <span class="relative z-10">Apply Now</span>
+                        <button onClick={applyJobBtn} className="relative rounded-lg flex h-[50px] w-full items-center justify-center overflow-hidden bg-gray-800 text-white shadow-2xl transition-all before:absolute before:h-0 before:w-0 before:bg-cyan-600 before:duration-500 before:ease-out hover:shadow-cyan-600 hover:before:h-56 hover:before:w-full">
+                            <span className="relative z-10">Apply Now</span>
                         </button>
                     </div>
                 </div>
