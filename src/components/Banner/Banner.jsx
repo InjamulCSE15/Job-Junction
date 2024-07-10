@@ -6,8 +6,7 @@ export const Banner = () => {
         <div className="max-w-md">
           <h1 className="text-5xl font-bold">Hello there</h1>
           <p className="py-6">
-            Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem
-            quasi. In deleniti eaque aut repudiandae et a id nisi.
+            "Explore thousands of job listings tailored to your skills and aspirations. Connect with top employers and take the next step in your career journey. Start your search now and unlock your full potential."
           </p>
           <button className="btn">Get Started</button>
         </div>

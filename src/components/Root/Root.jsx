@@ -8,8 +8,8 @@ export const Root = () => {
       <div className="container mx-auto">
         <Header/>
         <Outlet/>
-      </div>
-      <Footer/>
+        </div>
+        <Footer/>
     </div>
   )
 }

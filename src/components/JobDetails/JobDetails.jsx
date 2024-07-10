@@ -1,18 +1,39 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import toast from 'react-hot-toast';
 import { useLoaderData, useParams } from 'react-router-dom'
-import { storeAppliedJobId } from '../LocalStore/localStore';
+import { storeAppliedJobId, getStoreAppliedJob } from '../LocalStore/localStore';
 
 export const JobDetails = () => {
+    const [localStoreJobs, setLocalStoreJobs] = useState([]);
     const jobs = useLoaderData();
     const { id } = useParams();
     const job = jobs.find(job => job.id == id)
     const { job_title, company, logo, jobType, salary, position, remote, location, job_description, job_responsibility, skills, qualifications, contact_information } = job;
 
     const applyJobBtn = () => {
+        const duplicateCheck = localStoreJobs.find((checkDuplicate) => checkDuplicate.id == id);
+        if(duplicateCheck.id == id){
+            toast.error('You have already applied this job.');
+            return;
+        }
         storeAppliedJobId(id);
         toast.success('Job applied successfully!');
     }
+
+    useEffect(()=>{
+        const storeJobs = getStoreAppliedJob();
+        if(storeJobs.length) { 
+            const tempData = [];
+            for (const id of storeJobs) {
+                const existJob = jobs.find(job => job.id == id);
+                if(existJob){
+                    tempData.push(job);
+                }
+            }    
+            setLocalStoreJobs(tempData) 
+        };
+        console.log(localStoreJobs);
+    },[])
 
     return (
         <section className="">
@@ -23,8 +44,8 @@ export const JobDetails = () => {
                         <strong className="font-extrabold text-red-700 sm:block"> Job Junction </strong>
                     </h1>
                     <p className="mt-4 sm:text-xl/relaxed">
-                        <span className='block'>Explore Exciting Opportunities as a <strong>{job_title}</strong>
-                            Discover the details about this role and see how you can make an impact with us.
+                        <span className='block'>Explore Exciting Opportunities as a <strong>{job_title} </strong>
+                        Discover the details about this role and see how you can make an impact with us.
                         </span>
                     </p>
                 </div>

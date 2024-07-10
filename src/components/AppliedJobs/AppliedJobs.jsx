@@ -73,7 +73,8 @@ export const AppliedJobs = () => {
                   </ul>
                 </details>                
               </div>
-            </div>            
+            </div>
+            
             <div className="mt-8 container mx-auto px-2">
               <div className="grid grid-cols-1 gap-y-5">
                 {
