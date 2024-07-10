@@ -73,16 +73,7 @@ export const AppliedJobs = () => {
                   </ul>
                 </details>                
               </div>
-            </div>
-            {/* <div className="grid items-center grid-cols-12 mb-4">
-              <div className="col-span-12 lg:col-span-8">
-                <div className="mb-3 mb-lg-0">
-                  <h6 className="text-gray-900 text-base dark:text-gray-50">
-                    Total applied: {appliedJobs.length}
-                  </h6>
-                </div>
-              </div>
-            </div> */}
+            </div>            
             <div className="mt-8 container mx-auto px-2">
               <div className="grid grid-cols-1 gap-y-5">
                 {

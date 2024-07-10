@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-import { FiMapPin } from "react-icons/fi";
 export const FeaturedJobCard = ({ featuredJob }) => {
     const { id, job_title, company, logo, jobType, salary, position, remote, location, job_short_details } = featuredJob;
     return (
@@ -32,7 +31,7 @@ export const FeaturedJobCard = ({ featuredJob }) => {
                                         <path d="M17.657 16.657l-4.243 4.243a2 2 0 0 1 -2.827 0l-4.244 -4.243a8 8 0 1 1 11.314 0z" />
                                     </svg>
                                     <span className=" text-gray-600 text-sm"> {location}</span></h4>
-                                <Link to={`job/${id}`} className="btn-link no-underline text-sm bg-gray-800 px-2 py-1 text-white rounded-md hover:border hover:border-gray-800 hover:bg-white hover:text-gray-800 hover:no-underline hover:font-medium">View Details</Link>
+                                <Link to={`/${id}`} className="btn-link no-underline text-sm bg-gray-800 px-2 py-1 text-white rounded-md hover:border hover:border-gray-800 hover:bg-white hover:text-gray-800 hover:no-underline hover:font-medium">View Details</Link>
                             </div>
                         </div>
                     </div>

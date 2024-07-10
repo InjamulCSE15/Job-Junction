@@ -23,8 +23,9 @@ export const JobDetails = () => {
                         <strong className="font-extrabold text-red-700 sm:block"> Job Junction </strong>
                     </h1>
                     <p className="mt-4 sm:text-xl/relaxed">
-                        <span className='block'>Explore Exciting Opportunities as a <strong>{job_title}</strong></span>
-                        Discover the details about this role and see how you can make an impact with us.
+                        <span className='block'>Explore Exciting Opportunities as a <strong>{job_title}</strong>
+                            Discover the details about this role and see how you can make an impact with us.
+                        </span>
                     </p>
                 </div>
             </div>

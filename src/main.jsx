@@ -15,6 +15,7 @@ import { AppliedJobs } from './components/AppliedJobs/AppliedJobs';
 import { Error404 } from './components/Error404/Error404';
 import { JobDetails } from './components/JobDetails/JobDetails';
 import { Toaster } from 'react-hot-toast';
+import { Jobs } from './components/Jobs/Jobs';
 const router = createBrowserRouter([
   {
     path: "/",
@@ -24,6 +25,11 @@ const router = createBrowserRouter([
       {
         path:'/',
         element:<Home/>
+      },
+      {
+        path:'/jobs',
+        element:<Jobs/>,
+        loader: ()=> fetch('/featuredJobs.json')
       },
       {
         path:'/applied',
