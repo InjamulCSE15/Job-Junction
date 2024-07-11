@@ -17,11 +17,10 @@ export const JobCategoryList = () => {
       <div className="hero-content py-4">
         <p className='text-gray-500 text-justify'>Join thousands of job seekers and find the perfect match for your skills and ambitions. Search for jobs across all industries and locations, get personalized job recommendations, and take the next step in your career journey.</p>
       </div>        
-      <div className="grid grid-cols-4 mt-4">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 mt-4">
       {
         jobCategories.map(jobCategory => <JobListCard key={jobCategory.id} jobCategory={jobCategory} ></JobListCard>)
       }
-
       </div>
     </div>
   )

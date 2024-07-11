@@ -5,7 +5,7 @@ export const JobListCard = ({jobCategory}) => {
     <article className="rounded-lg border border-gray-100 bg-white p-4 shadow-sm transition hover:shadow-lg sm:p-6"
         >
           <span className="inline-block rounded">
-            <img className="h-32" src={image} alt={title} />
+            <img className="lg:h-[11em] h-100" src={image} alt={title} />
           </span>
 
           <h3 className="mt-0.5 text-sm font-medium text-gray-700 text-center">{title}</h3>
