@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom';
 
 export const AppliedJobCard = ({ appliedJob }) => {
-    const { id, job_title, company, logo, jobType, salary, position, remote, location } = appliedJob;
+    const { id, job_title, company, logo, jobType, salary, position, remote, job_location } = appliedJob;
     return (
         <div className="p-5 border border-gray-200 rounded-md relative hover:-translate-y-1.5 transition-all duration-500 ease-in-out hover:border-indigo-500 group-data-[theme-color=sky]:hover:border-sky-500 group-data-[theme-color=red]:hover:border-red-500 group-data-[theme-color=green]:hover:border-green-500 group-data-[theme-color=pink]:hover:border-pink-500 group-data-[theme-color=blue]:hover:border-blue-500 hover:shadow-md hover:shadow-gray-100/30 dark:border-neutral-600 dark:hover:shadow-neutral-900">
             <div className="grid grid-cols-12 items-center">
@@ -27,7 +27,7 @@ export const AppliedJobCard = ({ appliedJob }) => {
                                         <path d="M9 11a3 3 0 1 0 6 0a3 3 0 0 0 -6 0" />
                                         <path d="M17.657 16.657l-4.243 4.243a2 2 0 0 1 -2.827 0l-4.244 -4.243a8 8 0 1 1 11.314 0z" />
                                     </svg>
-                                    {location}
+                                    {job_location}
                                 </p>
                             </li>
                             <li className="">

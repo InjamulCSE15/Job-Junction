@@ -8,9 +8,9 @@ export const JobDetails = () => {
     const jobs = useLoaderData();
     const { id } = useParams();
     const job = jobs.find(job => job.id == id)
-    const { job_title, company, logo, jobType, salary, position, remote, location, job_description, job_responsibility, skills, qualifications, contact_information } = job;
+    const { job_title, company, logo, jobType, salary, position, remote, job_location, job_description, job_responsibility, skills, qualifications, contact_information } = job;
 
-    const applyJobBtn = () => {
+    const applyJobBtn = (id) => {
         const duplicateCheck = localStoreJobs.find((checkDuplicate) => checkDuplicate.id == id);
         if(duplicateCheck.id == id){
             toast.error('You have already applied this job.');
@@ -63,7 +63,7 @@ export const JobDetails = () => {
                                         <path d="M9 11a3 3 0 1 0 6 0a3 3 0 0 0 -6 0" />
                                         <path d="M17.657 16.657l-4.243 4.243a2 2 0 0 1 -2.827 0l-4.244 -4.243a8 8 0 1 1 11.314 0z" />
                                     </svg>
-                                    <span className=" text-gray-700 text-sm"> {location}</span></h4>
+                                    <span className=" text-gray-700 text-sm"> {job_location}</span></h4>
                             </div>
                             <div>
                                 <img src={logo} className='h-32 w-auto' alt={company} />
@@ -140,7 +140,7 @@ export const JobDetails = () => {
                             <li>Email: {contact_information.email}</li>
                             <li>Address: {contact_information.address}</li>
                         </ul>
-                        <button onClick={applyJobBtn} className="relative rounded-lg flex h-[50px] w-full items-center justify-center overflow-hidden bg-gray-800 text-white shadow-2xl transition-all before:absolute before:h-0 before:w-0 before:bg-cyan-600 before:duration-500 before:ease-out hover:shadow-cyan-600 hover:before:h-56 hover:before:w-full">
+                        <button onClick={()=>applyJobBtn(id)} className="relative rounded-lg flex h-[50px] w-full items-center justify-center overflow-hidden bg-gray-800 text-white shadow-2xl transition-all before:absolute before:h-0 before:w-0 before:bg-cyan-600 before:duration-500 before:ease-out hover:shadow-cyan-600 hover:before:h-56 hover:before:w-full">
                             <span className="relative z-10">Apply Now</span>
                         </button>
                     </div>
