@@ -10,7 +10,7 @@ export const JobDetails = () => {
     const job = jobs.find(job => job.id == id)
     const { job_title, company, logo, jobType, salary, position, remote, job_location, job_description, job_responsibility, skills, qualifications, contact_information } = job;
 
-    const applyJobBtn = (id) => {
+    const applyJobBtn = () => {
         const duplicateCheck = localStoreJobs.find((checkDuplicate) => checkDuplicate.id == id);
         if(duplicateCheck.id == id){
             toast.error('You have already applied this job.');
@@ -140,7 +140,7 @@ export const JobDetails = () => {
                             <li>Email: {contact_information.email}</li>
                             <li>Address: {contact_information.address}</li>
                         </ul>
-                        <button onClick={()=>applyJobBtn(id)} className="relative rounded-lg flex h-[50px] w-full items-center justify-center overflow-hidden bg-gray-800 text-white shadow-2xl transition-all before:absolute before:h-0 before:w-0 before:bg-cyan-600 before:duration-500 before:ease-out hover:shadow-cyan-600 hover:before:h-56 hover:before:w-full">
+                        <button onClick={()=>applyJobBtn} className="relative rounded-lg flex h-[50px] w-full items-center justify-center overflow-hidden bg-gray-800 text-white shadow-2xl transition-all before:absolute before:h-0 before:w-0 before:bg-cyan-600 before:duration-500 before:ease-out hover:shadow-cyan-600 hover:before:h-56 hover:before:w-full">
                             <span className="relative z-10">Apply Now</span>
                         </button>
                     </div>
